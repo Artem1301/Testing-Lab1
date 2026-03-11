@@ -28,7 +28,7 @@ public class Line {
 
     public static Line fromPointAndNormal(double x0, double y0, double normA, double normB){
         if(Math.pow(normA, 2) + Math.pow(normB,2) == 0){
-            throw new IllegalArgumentException("Помилка: нормальний вектор не може бути нульовим.");
+            throw new IllegalArgumentException("Помилка: нормальний вектор не може бути нульовим");
         }
 
         double a = normA;
