@@ -11,15 +11,7 @@ public class LineInputs {
             try {
                 System.out.println("Введіть a та b (довжини відрізків на Ox та Oy):");
                 double[] numbers = readNumbers(scanner, 2);
-
-                if (numbers[0] == 0 || numbers[1] == 0) {
-                    throw new IllegalArgumentException("a і b не можуть дорівнювати 0.");
-                }
-
-                double a = numbers[0];
-                double b = numbers[1];
-
-                return Line.fromGeneralForm(b, a, -a * b);
+                return Line.fromGeneralForm(numbers[1], numbers[0]);
 
             } catch (NumberFormatException e) {
                 printErrorAndSolutionMessages(

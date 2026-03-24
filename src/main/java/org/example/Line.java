@@ -18,11 +18,11 @@ public class Line {
     }
     private final List<Point2D> inputPoints = new ArrayList<>();
 
-    public static Line fromGeneralForm(double a, double b, double c) {
+    public static Line fromGeneralForm(double a, double b) {
         if (a == 0 && b == 0) {
             throw new IllegalArgumentException("Некоректне рівняння прямої.");
         }
-
+        double c = -a * b;
         return new Line(a, b, c);
     }
 
