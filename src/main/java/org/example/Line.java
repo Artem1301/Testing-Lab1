@@ -18,17 +18,17 @@ public class Line {
     }
     private final List<Point2D> inputPoints = new ArrayList<>();
 
-    public static Line fromGeneralForm(double a, double b, double c) {
+    public static Line fromGeneralForm(double a, double b) {
         if (a == 0 && b == 0) {
             throw new IllegalArgumentException("Некоректне рівняння прямої.");
         }
-
+        double c = -a * b;
         return new Line(a, b, c);
     }
 
     public static Line fromPointAndNormal(double x0, double y0, double normA, double normB){
         if(Math.pow(normA, 2) + Math.pow(normB,2) == 0){
-            throw new IllegalArgumentException("Помилка: нормальний вектор не може бути нульовим.");
+            throw new IllegalArgumentException("Помилка: нормальний вектор не може бути нульовим");
         }
 
         double a = normA;
